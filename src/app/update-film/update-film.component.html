@@ -1,0 +1,40 @@
+<div class="container-sm">
+    <form #updateForm="ngForm"  (ngSubmit)="onUpdate(updateForm)">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" [(ngModel)]="film.title"  id="title" placeholder="Enter movie title">
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" name="description" [(ngModel)]="film.description"  id="description" rows="3" placeholder="Enter movie description"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="genre" class="form-label">Genre</label>
+            <input type="text" name="genre" class="form-control" [(ngModel)]="film.genre"  id="genre" placeholder="Enter genre (e.g. Sci-Fi)">
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Image URL</label>
+            <input type="url" name="image" [(ngModel)]="film.image" class="form-control" id="image" placeholder="Enter image URL">
+        </div>
+
+        <div class="mb-3">
+            <label for="rating" class="form-label">Rating</label>
+            <input type="number" name="rating" step="0.1"  class="form-control" [(ngModel)]="film.rating" id="rating" placeholder="Enter rating (e.g. 8.8)">
+        </div>
+
+        <div class="mb-3">
+            <label for="year" class="form-label">Year</label>
+            <input type="number" class="form-control" name="year" [(ngModel)]="film.year"id="year" placeholder="Enter release year (e.g. 2010)">
+        </div>
+
+        <div class="mb-3 form-check">
+            <input type="checkbox" [(ngModel)]="film.isNew" name="isNew" class="form-check-input" id="isNew">
+            <label class="form-check-label" for="isNew">Is this a new movie?</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Movie</button>
+    </form>
+</div>

@@ -1,0 +1,19 @@
+<!-- Les types des pipes : 
+    - Pipe prédéfini : 
+        - titlecase : transforme la chaîne en majuscules
+        - currency : formate le prix en USD
+        - date : formate la date en dd-MM-yyyy
+        - percent : formate le rating en pourcentage
+    - Pipe personnalisé :   
+        - truncate : tronque la chaîne à n caractères (voir truncate.pipe.ts)
+-->
+<div class="container-sm">
+    <h1>fiche produit</h1>
+    <div>
+        <p>{{produit.name | titlecase | truncate:10}}</p> <!-- titlecase : transforme le premier caractère de chaque mot en majuscule -->
+        <p>{{produit.description | truncate:20 }}</p> <!-- truncate : tronque la chaîne à 20 caractères -->
+        <p>{{produit.price | currency:'USD'}}</p> <!-- currency : formate le prix en USD -->
+        <p>{{produit.dateSortie | date:'dd-MM-yyyy'}}</p> <!-- date : formate la date en dd-MM-yyyy -->
+        <p>{{produit.rating | percent}}</p> <!-- pourcentage : transforme le rating de 0.75 en 75% -->
+    </div>
+</div>
