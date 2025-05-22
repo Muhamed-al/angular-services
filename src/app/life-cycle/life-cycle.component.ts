@@ -63,6 +63,8 @@ export class LifeCycleComponent {
   // Nettoyer : désabonnements, timers, etc.
   ngOnDestroy() {
     console.log("On Destroy")
+
+    //this.unsubscribe()
   }
 
 }

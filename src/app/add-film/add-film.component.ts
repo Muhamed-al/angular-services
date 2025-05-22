@@ -11,29 +11,31 @@ import { FilmService } from '../services/film.service';
 })
 export class AddFilmComponent {
 
+
+
   constructor(private filmService : FilmService){}
 
   filmForm = new FormGroup({
-    title: new FormControl(''),
-    description: new FormControl(''),
-    genre: new FormControl(''),
-    image: new FormControl(''),
-    rating: new FormControl(''),
+    title : new FormControl(''),
+    description : new FormControl(''),
+    genre : new FormControl(''),
+    image : new FormControl(''),
+    rating : new FormControl(''),
     year : new FormControl(''),
-    isNew : new FormControl(false),
+    isNew : new FormControl(''),
   })
 
   onAddFilm(){
-    this.filmService.createFilm(this.filmForm.value).subscribe(
+    console.log(this.filmForm)
+    this.filmService.addFilm(this.filmForm.value).subscribe(
       (res) =>{
-        alert("Film Ajouté avec succes")
+        alert("Film ajouyé avec succés")
       },
-      (err) =>{
+      (err)=>{
         console.error(err)
       }
     )
   }
-
-
+  
 
 }

@@ -1,0 +1,44 @@
+<div class="container">
+    <form [formGroup]="participantForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" formControlName="name" class="form-control" id="name" name="name"
+            [class.is-invalid]="isInvalidAndTouchedOrDirty(participantForm.controls.name)">
+            >
+            <small *ngIf="isInvalidAndTouchedOrDirty(participantForm.controls.name)">
+                <ng-container *ngIf="participantForm.controls.name.hasError('minlength')">
+                    name must be al least 5 characters
+                </ng-container>
+                <ng-container *ngIf="participantForm.controls.name.hasError('maxlength')">
+                    Name must be less than 10 characters
+                </ng-container>
+            </small>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" formControlName="email" class="form-control" id="email" name="email"
+            [class.is-invalid]="isInvalidAndTouchedOrDirty(participantForm.controls.email)">
+            <small *ngIf="isInvalidAndTouchedOrDirty(participantForm.controls.email)">
+                <ng-container *ngIf="participantForm.controls.email.hasError('required')">
+                    email is required 
+                </ng-container>
+                <ng-container *ngIf="participantForm.controls.email.hasError('email')">
+                    email is invalid
+                </ng-container>
+            </small>
+            
+        </div>
+        <div class="form-group">
+            <label for="telephone">Telephone</label>
+            <input type="text" formControlName="telephone" class="form-control" id="telephone" name="telephone">
+        </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select formControlName="status" class="form-control" id="status" name="status">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Participant</button>
+    </form>
+</div>

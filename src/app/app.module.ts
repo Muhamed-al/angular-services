@@ -12,6 +12,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddFilmComponent } from './add-film/add-film.component';
 import { UpdateFilmComponent } from './update-film/update-film.component';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
+import { DemoComponent } from './demo/demo.component';
+import { Truncate1Pipe } from './truncate1.pipe';
+import { ListParticipantComponent } from './list-participant/list-participant.component';
+import { UpdateParticipantComponent } from './update-participant/update-participant.component';
+import { ParticipantDetailsComponent } from './participant-details/participant-details.component';
+import { CarsComponent } from './cars/cars.component';
+import { ConvertPricePipe } from './convert-price.pipe';
+import { ConvertPipe } from './convert.pipe';
+import { AddParticipantComponent } from './add-participant/add-participant.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +31,16 @@ import { LifeCycleComponent } from './life-cycle/life-cycle.component';
     MoviesListComponent,
     AddFilmComponent,
     UpdateFilmComponent,
-    LifeCycleComponent
+    LifeCycleComponent,
+    DemoComponent,
+    Truncate1Pipe,
+    ListParticipantComponent,
+    UpdateParticipantComponent,
+    ParticipantDetailsComponent,
+    CarsComponent,
+    ConvertPricePipe,
+    ConvertPipe,
+    AddParticipantComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +49,7 @@ import { LifeCycleComponent } from './life-cycle/life-cycle.component';
     ReactiveFormsModule,
     FormsModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

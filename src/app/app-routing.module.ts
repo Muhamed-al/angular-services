@@ -3,11 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddFilmComponent } from './add-film/add-film.component';
 import { UpdateFilmComponent } from './update-film/update-film.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
-
+import { DemoComponent } from './demo/demo.component';
+import { UpdateParticipantComponent } from './update-participant/update-participant.component';
+import { ParticipantDetailsComponent } from './participant-details/participant-details.component';
+import { CarsComponent } from './cars/cars.component';
 const routes: Routes = [
   {path : '' , component : MoviesListComponent},
   {path : 'add' , component : AddFilmComponent},
   {path : 'update/:id' , component : UpdateFilmComponent},
+  {path : 'demo' , component : DemoComponent},
+  {path :'update/:id' , component : UpdateParticipantComponent},
+  {path :'participant/:id' , component : ParticipantDetailsComponent},
+  {path :'cars' , component : CarsComponent},
   // Lazy loading (chargement paresseux) : on charge le module admin.module.ts uniquement lorsque l'url contient /admin
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
 ];

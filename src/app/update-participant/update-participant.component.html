@@ -1,0 +1,32 @@
+<div class="card-body">
+    <form #participantForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nom</label>
+            <input type="text" name="name" [(ngModel)]="participant.name" class="form-control" id="name"
+                placeholder="Entrez le nom">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" [(ngModel)]="participant.email" class="form-control" id="email"
+                placeholder="Entrez l'email">
+        </div>
+        <div class="mb-3">
+            <label for="telephone" class="form-label">Téléphone</label>
+            <input type="tel" name="telephone" [(ngModel)]="participant.telephone" class="form-control" id="telephone"
+                placeholder="numéro de téléphone">
+        </div>
+        <div class="mb-3">
+            <label for="status" class="form-label">Statut</label>
+            <select class="form-select" id="status" [(ngModel)]="participant.status" name="status">
+                <option value="PENDING">En attente</option>
+                <option value="ACTIVE">Actif</option>
+                <option value="INACTIVE">Inactif</option>
+            </select>
+        </div>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">
+                Ajouter participant
+            </button>
+        </div>
+    </form>
+</div>

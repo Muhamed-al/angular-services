@@ -1,0 +1,8 @@
+<div>
+    <input type="text" [(ngModel)]="currency">
+    <ul>
+        <li *ngFor="let car of PrixCars">
+            <span>{{car.modele}} : {{car.prix | convert : currency}}</span>
+        </li>
+    </ul>
+</div>

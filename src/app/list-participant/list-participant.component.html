@@ -1,0 +1,9 @@
+<div>
+    <ul *ngFor="let participant of participants">
+        <li [routerLink]="['participant' , participant.id]">{{participant.name}}</li>
+        <li>{{participant.email}}</li>
+        <li>{{participant.telephone}}</li>
+        <li>{{participant.status}}</li>
+        <button (click)="onDelete(participant.id)">Delete</button>
+    </ul>
+</div>

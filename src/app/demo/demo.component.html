@@ -1,0 +1,10 @@
+<div class="container-sm">
+    <h1>fiche produit</h1>
+    <div>
+        <p>{{produit.name | titlecase}}</p> 
+        <p>{{produit.description | truncate1:5}}</p> 
+        <p>{{produit.price | currency:'EUR'}}</p> 
+        <p>{{produit.dateSortie | date:'dd/MM/yyyy'}}</p> 
+        <p>{{produit.rating | percent}}</p> 
+    </div>
+</div>
